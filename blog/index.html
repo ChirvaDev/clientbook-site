@@ -1,0 +1,14 @@
+---
+layout: default
+title: Blog
+description: Tips on booking clients, running your schedule and growing a beauty or freelance business.
+---
+<main class="wrap doc">
+  <h1>Blog</h1>
+  <p class="updated">Tips on booking clients, running your schedule and growing your business.</p>
+  {% if site.posts.size > 0 %}
+    {% include post-list.html %}
+  {% else %}
+    <p>First articles are coming soon.</p>
+  {% endif %}
+</main>

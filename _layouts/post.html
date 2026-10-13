@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<main class="wrap doc post">
+  <p class="crumbs"><a href="{{ '/blog/' | relative_url }}">← Blog</a></p>
+  <article>
+    <h1>{{ page.title }}</h1>
+    <p class="updated"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time></p>
+    {{ content }}
+  </article>
+  <aside class="card cta">
+    <img src="{{ '/assets/icon.jpg' | relative_url }}" alt="">
+    <div>
+      <p><strong>Try Client Book</strong><br>A simple appointment book and client list for your iPhone.</p>
+      {% include app-store-button.html %}
+    </div>
+  </aside>
+</main>

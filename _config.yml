@@ -1,0 +1,37 @@
+# Site settings — used by every page, the blog, SEO tags and the sitemap.
+title: Client Book
+tagline: Appointments & Clients
+description: Client Book is a simple appointment book and client list for beauty pros, stylists and freelancers. Schedule bookings, keep client notes and track your income.
+lang: en
+
+url: "https://myclientbook.app"
+baseurl: ""
+
+# Change these in one place — they are used across all pages.
+email: support@myclientbook.app
+app_store_id: "0000000000"   # TODO: real App Store ID once the app is live
+
+logo: /assets/apple-touch-icon.png
+social:
+  name: Client Book
+
+markdown: kramdown
+timezone: UTC
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+feed:
+  path: blog/feed.xml
+
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post, permalink: "/blog/:title/" }
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

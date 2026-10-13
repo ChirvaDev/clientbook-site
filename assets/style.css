@@ -100,3 +100,28 @@ a:hover { text-decoration: underline; }
 .site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
 .site-footer nav { display: flex; gap: 18px; }
 .site-footer a { color: var(--muted); }
+
+/* Blog */
+.latest { padding: 0 0 48px; }
+.latest h2 { font-size: 22px; margin: 0 0 12px; }
+.post-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.doc .post-list { padding-left: 0; }
+.post-list li { margin: 0; }
+.post-list a { display: block; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; color: var(--text); }
+.post-list a:hover { text-decoration: none; border-color: var(--accent); }
+.post-list h3 { margin: 0 0 4px; font-size: 18px; line-height: 1.35; }
+.post-list p { margin: 0 0 8px; color: var(--muted); font-size: 15px; line-height: 1.5; }
+.post-list time { color: var(--muted); font-size: 13px; }
+
+.crumbs { margin: 0 0 16px; font-size: 15px; }
+.post article h2 { font-size: 24px; margin: 40px 0 10px; letter-spacing: -0.01em; }
+.post article h3 { font-size: 19px; margin: 28px 0 6px; }
+.post article img { max-width: 100%; height: auto; border-radius: 14px; }
+.post article blockquote { margin: 20px 0; padding: 4px 20px; border-left: 3px solid var(--accent); color: var(--muted); }
+.post article code { background: var(--accent-soft); padding: 2px 6px; border-radius: 6px; font-size: 0.9em; }
+.post article a { text-decoration: underline; text-underline-offset: 2px; }
+
+.cta { display: flex; gap: 16px; align-items: flex-start; margin-top: 48px; }
+.cta img { width: 56px; height: 56px; border-radius: 13px; flex-shrink: 0; }
+.cta p { margin: 0 0 14px; }
+@media (max-width: 560px) { .cta { flex-direction: column; } }
