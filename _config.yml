@@ -9,7 +9,13 @@ baseurl: ""
 
 # Change these in one place — they are used across all pages.
 email: support@myclientbook.app
-app_store_id: "0000000000"   # TODO: real App Store ID once the app is live
+# Leave empty until the app is live. While empty, all download buttons show "Coming soon".
+# Client Book Apple ID (App Store Connect): 6810140286 -> on release day set app_store_id: "6810140286".
+# Do not set it earlier: apps.apple.com/app/id6810140286 returns 404 until the app is published.
+app_store_id: ""
+
+# Cloudflare Web Analytics token (Cloudflare -> Analytics & Logs -> Web Analytics). Empty = no analytics.
+cloudflare_analytics_token: "43e9890a6fc24ce0a9a67a06c48474cf"
 
 logo: /assets/apple-touch-icon.png
 social:

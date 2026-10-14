@@ -2,13 +2,17 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a class="brand" href="{{ '/' | relative_url }}"><img src="{{ '/assets/icon.jpg' | relative_url }}" alt="" width="32" height="32">{{ site.title }}</a>
+        <a class="brand" href="{{ '/' | relative_url }}"><img src="{{ '/assets/icon.jpg' | relative_url }}" alt="Client Book logo" width="32" height="32">{{ site.title }}</a>
         <p>A simple appointment book and client list for solo service pros.</p>
       </div>
       <div>
         <h4>Product</h4>
         <a href="{{ '/#features' | relative_url }}">Features</a>
+        {%- if site.app_store_id and site.app_store_id != "" %}
         <a href="https://apps.apple.com/app/id{{ site.app_store_id }}">Download for iPhone</a>
+        {%- else %}
+        <span class="footer-soon">iPhone app — coming soon</span>
+        {%- endif %}
         <a href="{{ '/blog/' | relative_url }}">Blog</a>
       </div>
       <div>
