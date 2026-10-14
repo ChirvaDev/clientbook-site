@@ -1,27 +1,181 @@
 ---
 layout: default
-title: Appointments & Clients
+title: Appointment Book & Client List for iPhone
+description: Client Book is a simple appointment book and client list for hairstylists, barbers, nail and lash artists and other solo service pros. Book clients, keep notes and photos, track your income. No account needed.
 ---
-<main class="wrap">
+<main class="home">
+
+  <!-- HERO -->
   <section class="hero">
-    <img class="app-icon" src="{{ '/assets/icon.jpg' | relative_url }}" alt="Client Book app icon">
-    <h1>Your clients and schedule,<br>in one place.</h1>
-    <p>A simple appointment book for beauty pros, stylists and freelancers. Book clients, keep notes and see what you earn.</p>
-    {% include app-store-button.html %}
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">For solo service pros ✂️</p>
+        <h1>Your clients and schedule, in one simple app.</h1>
+        <p class="lead">Book appointments, keep client notes and photos, and see what you earn — all in your pocket. No account, no clutter.</p>
+        <div class="hero-cta">
+          {% include app-store-button.html %}
+          <p class="fine">No account needed · Your data stays on your iPhone</p>
+        </div>
+      </div>
+      <div class="hero-visual">
+        {% include phone.html label="Hero: Today / Appointments" tone="blue" %}
+      </div>
+    </div>
   </section>
 
-  <section class="features">
-    <div class="feature"><div class="ic">📅</div><h3>Appointments</h3><p>Day, list and month views. Add a booking in seconds.</p></div>
-    <div class="feature"><div class="ic">👤</div><h3>Client cards</h3><p>Contacts, notes, visit history and reference photos.</p></div>
-    <div class="feature"><div class="ic">💰</div><h3>Income &amp; expenses</h3><p>Track revenue, costs and your monthly goal.</p></div>
-    <div class="feature"><div class="ic">🎂</div><h3>Reminders</h3><p>Never miss a client's birthday or a follow-up.</p></div>
+  <!-- TRUST STRIP -->
+  <section class="wrap">
+    <ul class="pills">
+      <li>🔒 No account</li>
+      <li>📵 No ads or tracking</li>
+      <li>📱 Data stays on your device</li>
+      <li>📤 Export anytime</li>
+    </ul>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Simpler than your paper book.</h2>
+        <p>Set up in a minute. No training, no manual.</p>
+      </div>
+      <ol class="steps">
+        <li><span class="step-num">01</span><h3>Add your clients</h3><p>Type them in, pick from your contacts, or import a CSV.</p></li>
+        <li><span class="step-num">02</span><h3>Book appointments</h3><p>Choose a client, a service and a time. Done in seconds.</p></li>
+        <li><span class="step-num">03</span><h3>See what you earn</h3><p>Income, expenses and profit add up automatically.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- BIG FEATURES -->
+  <section class="section" id="features">
+    <div class="wrap">
+      <div class="feature-row">
+        <div class="feature-copy">
+          <p class="eyebrow">📅 Appointments</p>
+          <h2>Your whole day at a glance.</h2>
+          <p>Day, list and month views show exactly who's coming and when. Add a booking in a few taps — Client Book warns you about double bookings.</p>
+        </div>
+        <div class="feature-visual">{% include phone.html label="Feature: Calendar / Day view" tone="peach" %}</div>
+      </div>
+
+      <div class="feature-row reverse">
+        <div class="feature-copy">
+          <p class="eyebrow">👤 Client cards</p>
+          <h2>Remember every client's details.</h2>
+          <p>Contacts, notes, tags, visit history and a photo gallery with captions — perfect for color formulas, nail designs or reference shots.</p>
+        </div>
+        <div class="feature-visual">{% include phone.html label="Feature: Client card" tone="lilac" %}</div>
+      </div>
+
+      <div class="feature-row">
+        <div class="feature-copy">
+          <p class="eyebrow">💰 Income & expenses</p>
+          <h2>Know what you really make.</h2>
+          <p>Revenue from appointments, your costs and your profit — with a monthly goal to keep you motivated. In your own currency.</p>
+        </div>
+        <div class="feature-visual">{% include phone.html label="Feature: Overview / Income" tone="green" %}</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SMALL FEATURES GRID -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Simple, but powerful 💪</h2>
+        <p>Everything a one-person business needs. Nothing it doesn't.</p>
+      </div>
+      <div class="grid">
+        <div class="tile"><div class="ic">🎂</div><h3>Birthday reminders</h3><p>Never miss a client's birthday.</p></div>
+        <div class="tile"><div class="ic">🏷️</div><h3>Client tags</h3><p>Group VIPs, regulars or new clients.</p></div>
+        <div class="tile"><div class="ic">💬</div><h3>Group messages</h3><p>Text many clients at once.</p></div>
+        <div class="tile"><div class="ic">📇</div><h3>Import from Contacts</h3><p>Add clients from your address book.</p></div>
+        <div class="tile"><div class="ic">📄</div><h3>CSV import & export</h3><p>Move your list in or out anytime.</p></div>
+        <div class="tile"><div class="ic">💾</div><h3>Full backup</h3><p>One file to restore everything.</p></div>
+        <div class="tile"><div class="ic">✨</div><h3>Ready-made services</h3><p>Starter services for your profession.</p></div>
+        <div class="tile"><div class="ic">🌍</div><h3>Your currency</h3><p>Any currency and time zone.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Made for people who work with clients.</h2>
+      </div>
+      <ul class="chips">
+        <li>💇 Hairstylists</li><li>💈 Barbers</li><li>💅 Nail artists</li><li>👁️ Lash artists</li>
+        <li>💄 Makeup artists</li><li>🧖 Estheticians</li><li>🖋️ Tattoo artists</li><li>💆 Massage therapists</li>
+        <li>🧑‍💼 Freelancers</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PRIVACY / TRUST -->
+  <section class="section">
+    <div class="wrap">
+      <div class="trust">
+        <div class="trust-copy">
+          <p class="eyebrow">🔒 Private by design</p>
+          <h2>Your data always leaves with you.</h2>
+          <p>No account, no cloud lock-in. Your client list lives on your iPhone, and you can export a full backup or a CSV whenever you want. Nobody can hold your clients hostage.</p>
+          <a class="link-arrow" href="{{ '/privacy.html' | relative_url }}">Read our Privacy Policy →</a>
+        </div>
+        <div class="trust-visual">{% include phone.html label="Trust: Data & Backup screen" tone="dark" %}</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="wrap narrow">
+      <div class="section-head"><h2>Questions? Answers.</h2></div>
+      <div class="faq">
+        {% for item in site.data.faq %}
+        <details>
+          <summary>{{ item.q }}</summary>
+          <p>{{ item.a }}</p>
+        </details>
+        {% endfor %}
+      </div>
+      <p class="faq-more">Still have a question? <a href="{{ '/support.html' | relative_url }}">Contact support</a></p>
+    </div>
   </section>
 
   {% if site.posts.size > 0 %}
-  <section class="latest">
-    <h2>From the blog</h2>
-    {% include post-list.html limit=3 %}
-    <p><a href="{{ '/blog/' | relative_url }}">All articles →</a></p>
+  <!-- BLOG -->
+  <section class="section">
+    <div class="wrap narrow">
+      <div class="section-head"><h2>From the blog</h2></div>
+      {% include post-list.html limit=3 %}
+      <p class="faq-more"><a href="{{ '/blog/' | relative_url }}">All articles →</a></p>
+    </div>
   </section>
   {% endif %}
+
+  <!-- FINAL CTA -->
+  <section class="section">
+    <div class="wrap">
+      <div class="cta-band">
+        <img src="{{ '/assets/icon.jpg' | relative_url }}" alt="" width="88" height="88">
+        <h2>Ready to ditch the paper book?</h2>
+        <p>Get Client Book on your iPhone and set up in a minute.</p>
+        {% include app-store-button.html %}
+      </div>
+    </div>
+  </section>
+
 </main>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{% for item in site.data.faq %}
+    {"@type": "Question", "name": {{ item.q | jsonify }}, "acceptedAnswer": {"@type": "Answer", "text": {{ item.a | jsonify }}}}{% unless forloop.last %},{% endunless %}{% endfor %}
+  ]
+}
+</script>

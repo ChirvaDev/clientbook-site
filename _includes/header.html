@@ -1,11 +1,23 @@
 <header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="{{ '/' | relative_url }}"><img src="{{ '/assets/icon.jpg' | relative_url }}" alt="">{{ site.title }}</a>
-    <nav class="nav">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}"><img src="{{ '/assets/icon.jpg' | relative_url }}" alt="" width="32" height="32">{{ site.title }}</a>
+    <nav class="nav" aria-label="Main">
+      <a href="{{ '/#features' | relative_url }}">Features</a>
       <a href="{{ '/blog/' | relative_url }}"{% if page.url contains '/blog/' %} aria-current="page"{% endif %}>Blog</a>
       <a href="{{ '/support.html' | relative_url }}"{% if page.url == '/support.html' %} aria-current="page"{% endif %}>Support</a>
-      <a href="{{ '/privacy.html' | relative_url }}"{% if page.url == '/privacy.html' %} aria-current="page"{% endif %}>Privacy</a>
-      <a href="{{ '/terms.html' | relative_url }}"{% if page.url == '/terms.html' %} aria-current="page"{% endif %}>Terms</a>
     </nav>
+    <div class="header-actions">
+      <a class="btn btn-sm" href="https://apps.apple.com/app/id{{ site.app_store_id }}">Download</a>
+      <details class="menu">
+        <summary aria-label="Menu"><span></span><span></span></summary>
+        <nav class="menu-panel" aria-label="Mobile">
+          <a href="{{ '/#features' | relative_url }}">Features</a>
+          <a href="{{ '/blog/' | relative_url }}">Blog</a>
+          <a href="{{ '/support.html' | relative_url }}">Support</a>
+          <a href="{{ '/privacy.html' | relative_url }}">Privacy Policy</a>
+          <a href="{{ '/terms.html' | relative_url }}">Terms of Use</a>
+        </nav>
+      </details>
+    </div>
   </div>
 </header>

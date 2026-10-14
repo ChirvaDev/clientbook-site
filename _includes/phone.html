@@ -1,0 +1,13 @@
+{%- comment -%}
+  iPhone mockup slot.
+  Placeholder:  {% include phone.html label="Calendar screen" tone="blue" %}
+  Real mockup:  {% include phone.html src="/assets/mockups/calendar.png" alt="Calendar screen" %}
+  Mockups go to assets/mockups/ (PNG with transparent background, portrait, ~1200px tall).
+{%- endcomment -%}
+{%- if include.src -%}
+<img class="phone-img" src="{{ include.src | relative_url }}" alt="{{ include.alt | default: include.label }}" loading="lazy">
+{%- else -%}
+<div class="phone tone-{{ include.tone | default: 'blue' }}" role="img" aria-label="{{ include.label }}">
+  <span class="phone-label">📱 Mockup<br><strong>{{ include.label }}</strong></span>
+</div>
+{%- endif -%}
