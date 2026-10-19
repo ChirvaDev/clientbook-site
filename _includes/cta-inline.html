@@ -1,0 +1,17 @@
+{%- comment -%}
+Small in-article App Store prompt. post.html inserts it automatically in the middle of every guide
+(turn off with mid_cta: false in front matter). Text from cta_title / cta_text in front matter, or the defaults below.
+Usage: {% include cta-inline.html ct="g-slug-mid" %}
+{%- endcomment -%}
+<aside class="cta-inline">
+  <img src="{{ '/assets/icon.jpg' | relative_url }}" alt="" width="48" height="48" loading="lazy">
+  <div>
+    <p class="cta-inline-title">{{ page.cta_title | default: "Keep every client in your pocket" }}</p>
+    <p>{{ page.cta_text | default: "Client Book keeps client notes, photos, visits and birthdays on your iPhone — simple, and your data stays yours." }}</p>
+  </div>
+  {%- if site.app_store_id and site.app_store_id != "" %}
+  <a class="btn btn-sm" href="{% include app-store-url.html ct=include.ct %}">Get the app</a>
+  {%- else %}
+  <span class="btn btn-sm btn-soon" aria-disabled="true">Coming soon</span>
+  {%- endif %}
+</aside>

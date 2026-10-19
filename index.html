@@ -2,6 +2,9 @@
 layout: default
 title: Appointment Book & Client List for iPhone
 description: Simple appointment book and client list for iPhone. Book clients, keep notes and photos, track income. For hairstylists, nail and lash artists. No account.
+search_title: "Client Book — home"
+search_type: Page
+search_keywords: "home app iphone appointment book client list features download"
 ---
 <main class="home">
 
@@ -13,7 +16,7 @@ description: Simple appointment book and client list for iPhone. Book clients, k
         <h1>Your clients and schedule, in one simple app.</h1>
         <p class="lead">Book appointments, keep client notes and photos, and see what you earn — all in your pocket. No account, no clutter.</p>
         <div class="hero-cta">
-          {% include app-store-button.html %}
+          {% include app-store-button.html ct="home-hero" qr="qr-hero" %}
           <p class="fine">No account needed · Your data stays on your iPhone</p>
         </div>
       </div>
@@ -149,9 +152,9 @@ description: Simple appointment book and client list for iPhone. Book clients, k
   <!-- BLOG -->
   <section class="section">
     <div class="wrap narrow">
-      <div class="section-head"><h2>From the blog</h2></div>
+      <div class="section-head"><h2>From the guides</h2></div>
       {% include post-list.html limit=3 %}
-      <p class="faq-more"><a href="{{ '/blog/' | relative_url }}">All articles →</a></p>
+      <p class="faq-more"><a href="{{ '/guides/' | relative_url }}">All guides &amp; templates →</a></p>
     </div>
   </section>
   {% endif %}
@@ -163,7 +166,7 @@ description: Simple appointment book and client list for iPhone. Book clients, k
         <img src="{{ '/assets/icon.jpg' | relative_url }}" alt="Client Book app icon" width="88" height="88">
         <h2>Ready to ditch the paper book?</h2>
         <p>Get Client Book on your iPhone and set up in a minute.</p>
-        {% include app-store-button.html %}
+        {% include app-store-button.html ct="home-cta" qr="qr-cta" %}
       </div>
     </div>
   </section>
@@ -179,3 +182,17 @@ description: Simple appointment book and client list for iPhone. Book clients, k
   ]
 }
 </script>
+{%- if site.app_store_id and site.app_store_id != "" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Client Book",
+  "operatingSystem": "iOS",
+  "applicationCategory": "BusinessApplication",
+  "url": "{{ site.url }}",
+  "downloadUrl": "https://apps.apple.com/app/id{{ site.app_store_id }}",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+}
+</script>
+{%- endif %}

@@ -1,0 +1,173 @@
+---
+layout: default
+title: "Service Price Calculator for Beauty Pros (Nails, Hair, Lashes)"
+description: "Free service price calculator for nail techs, hairstylists and lash artists: find your minimum price from your time, products, costs and income goal."
+permalink: /service-price-calculator
+ct_key: t-price-calculator
+search_title: "Service price calculator"
+search_type: Tool
+search_keywords: "price pricing calculator charge cost how much nails hair lashes salon service minimum rate hourly"
+---
+<main class="wrap tpl-page calc">
+  <header class="tpl-head">
+    <p class="eyebrow">Free tool</p>
+    <h1>Service price calculator</h1>
+    <p class="lead">How much should you charge for a set of nails, a color or a lash fill? Enter your time, products, business costs and how much you want to earn — and see the minimum price that pays for all of it.</p>
+  </header>
+
+  <div class="calc-grid">
+    <form class="calc-form card" id="pf" onsubmit="return false" aria-label="Price calculator">
+      <fieldset>
+        <legend>The service</legend>
+        <label>Service time, minutes <span>incl. setup &amp; cleanup</span>
+          <input id="mins" type="number" inputmode="decimal" min="5" max="600" step="5" value="90"></label>
+        <label>Products used per service <span>gel, color, lashes, wax…</span>
+          <div class="money"><i class="cur">$</i><input id="prod" type="number" inputmode="decimal" min="0" step="0.5" value="6"></div></label>
+      </fieldset>
+      <fieldset>
+        <legend>Your business</legend>
+        <label>Income goal per year <span>before tax</span>
+          <div class="money"><i class="cur">$</i><input id="goal" type="number" inputmode="decimal" min="0" step="1000" value="45000"></div></label>
+        <label>Business costs per month <span>rent, insurance, software, tools…</span>
+          <div class="money"><i class="cur">$</i><input id="costs" type="number" inputmode="decimal" min="0" step="25" value="600"></div></label>
+        <label>Hours you work per week
+          <input id="hours" type="number" inputmode="decimal" min="1" max="80" step="1" value="35"></label>
+        <label>How full your book is, % <span>time actually with clients</span>
+          <input id="full" type="number" inputmode="decimal" min="10" max="100" step="5" value="75"></label>
+        <label>Weeks you work per year <span>minus holidays &amp; sick days</span>
+          <input id="weeks" type="number" inputmode="decimal" min="1" max="52" step="1" value="46"></label>
+        <label>Currency
+          <select id="cur"><option value="$">$</option><option value="£">£</option><option value="€">€</option><option value="A$">A$</option><option value="C$">C$</option></select></label>
+      </fieldset>
+    </form>
+
+    <section class="calc-out card" aria-live="polite">
+      <p class="out-label">Charge at least</p>
+      <p class="out-big" id="oMin">—</p>
+      <p class="out-sub">Suggested price: <strong id="oRound">—</strong></p>
+      <table class="out-table">
+        <tr><td>Your cost per client hour</td><td id="oHour">—</td></tr>
+        <tr><td>Time</td><td id="oTime">—</td></tr>
+        <tr><td>Products</td><td id="oProd">—</td></tr>
+        <tr><td>Client hours per year</td><td id="oHours">—</td></tr>
+        <tr><td>Clients a week, this service only</td><td id="oClients">—</td></tr>
+      </table>
+      <label class="cmp">Your current price <span>optional</span>
+        <div class="money"><i class="cur">$</i><input id="now" type="number" inputmode="decimal" min="0" step="1" placeholder="e.g. 65"></div></label>
+      <p class="cmp-out" id="oNow" hidden></p>
+    </section>
+  </div>
+
+  <aside class="cta-band">
+    <img src="{{ '/assets/icon.jpg' | relative_url }}" alt="Client Book app icon" width="72" height="72">
+    <h2>Set your prices once, see your income every day</h2>
+    <p>In Client Book every service keeps its price and duration, so your appointments add up to real income — next to your costs and monthly goal.</p>
+    {% include app-store-button.html ct="t-price-calculator-cta" qr="qr-price-calculator" %}
+  </aside>
+
+  <article class="tpl-doc">
+    <h2>How the calculator works</h2>
+    <p>Most pros set prices by looking at what others charge. That tells you what clients expect, but not whether the price actually pays your bills. This calculator works from your side of the chair:</p>
+    <ol>
+      <li><strong>Your yearly target</strong> = income goal + business costs × 12.</li>
+      <li><strong>Client hours per year</strong> = hours per week × how full your book is × weeks you work.</li>
+      <li><strong>Cost per client hour</strong> = yearly target ÷ client hours.</li>
+      <li><strong>Minimum price</strong> = cost per client hour × service time + products.</li>
+    </ol>
+    <p>The suggested price is rounded up to the nearest 5, because that's how most price lists look — and a few extra dollars per client cover the things you forgot to count.</p>
+
+    <h2>Example prices</h2>
+    <p>With the default numbers above — $45,000 a year, $600 a month in costs, 35 hours a week, 75% booked, 46 weeks — your cost per client hour is about $43.</p>
+    <table>
+      <thead><tr><th>Service</th><th>Time</th><th>Products</th><th>Minimum</th><th>Suggested</th></tr></thead>
+      <tbody>
+        <tr><td>Gel manicure</td><td>60 min</td><td>$4</td><td>$47.23</td><td>$50</td></tr>
+        <tr><td>Gel extensions, full set</td><td>120 min</td><td>$10</td><td>$96.46</td><td>$100</td></tr>
+        <tr><td>Women's cut &amp; blow-dry</td><td>60 min</td><td>$3</td><td>$46.23</td><td>$50</td></tr>
+        <tr><td>Root color</td><td>90 min</td><td>$15</td><td>$79.84</td><td>$80</td></tr>
+        <tr><td>Classic lash full set</td><td>120 min</td><td>$8</td><td>$94.46</td><td>$95</td></tr>
+        <tr><td>Lash fill</td><td>60 min</td><td>$4</td><td>$47.23</td><td>$50</td></tr>
+        <tr><td>Brow wax &amp; tint</td><td>30 min</td><td>$3</td><td>$24.61</td><td>$25</td></tr>
+      </tbody>
+    </table>
+    <p class="fine">Example numbers only — prices change a lot between cities, countries and experience levels. Run the calculator with your own.</p>
+
+    <h2>What counts as business costs</h2>
+    <ul>
+      <li>Rent, booth rent or suite rent</li>
+      <li>Insurance, licences and memberships</li>
+      <li>Software, booking tools and card payment fees</li>
+      <li>Tools and equipment (spread the cost over a year)</li>
+      <li>Education and courses</li>
+      <li>Laundry, cleaning, towels and disposables you don't count per service</li>
+      <li>Marketing, website and phone</li>
+    </ul>
+    <p>Products you use on a specific service — color, gel, lashes, wax — go into <em>Products used per service</em> instead, so expensive services carry their own cost.</p>
+
+    <h2>Common pricing mistakes</h2>
+    <ul>
+      <li><strong>Counting only the service time.</strong> Consultation, setup, cleanup and the gap between clients are part of the service. Include them in the minutes.</li>
+      <li><strong>Assuming a full book.</strong> Almost nobody is booked 100% of the time. Cancellations, no-shows and quiet weeks are why the "how full" number matters.</li>
+      <li><strong>Forgetting holidays and sick days.</strong> If you take 6 weeks off a year, your prices have to cover them.</li>
+      <li><strong>Copying the cheapest salon nearby.</strong> If their costs or income goal are lower than yours, their prices won't work for you.</li>
+      <li><strong>Never raising prices.</strong> Your costs go up every year. Check your numbers at least once a year — and use these <a href="{{ '/guides/price-increase-message-to-clients/' | relative_url }}">price increase message templates</a> to tell clients.</li>
+    </ul>
+
+    <h2>Questions</h2>
+    {% for item in site.data.price_faq %}
+    <p><strong>{{ item.q }}</strong><br>{{ item.a }}</p>
+    {% endfor %}
+  </article>
+
+  {% include related.html %}
+</main>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  function num(id, d) { var v = parseFloat($(id).value); return isFinite(v) && v >= 0 ? v : d; }
+  function money(v, cur) { return cur + (Math.round(v * 100) / 100).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+  function whole(v, cur) { return cur + Math.round(v).toLocaleString('en-US'); }
+  function calc() {
+    var cur = $('cur').value;
+    document.querySelectorAll('.cur').forEach(function (e) { e.textContent = cur; });
+    var mins = num('mins', 0), prod = num('prod', 0), goal = num('goal', 0), costs = num('costs', 0);
+    var hours = num('hours', 0), full = Math.min(num('full', 0), 100) / 100, weeks = Math.min(num('weeks', 0), 52);
+    var clientHours = hours * full * weeks;
+    if (!clientHours || !mins) { ['oMin', 'oRound', 'oHour', 'oTime', 'oProd', 'oHours', 'oClients'].forEach(function (k) { $(k).textContent = '—'; }); return; }
+    var perHour = (goal + costs * 12) / clientHours;
+    var timeCost = perHour * mins / 60;
+    var min = timeCost + prod;
+    var rounded = Math.ceil(min / 5) * 5;
+    $('oMin').textContent = money(min, cur);
+    $('oRound').textContent = whole(rounded, cur);
+    $('oHour').textContent = money(perHour, cur);
+    $('oTime').textContent = money(timeCost, cur);
+    $('oProd').textContent = money(prod, cur);
+    $('oHours').textContent = Math.round(clientHours).toLocaleString('en-US') + ' h';
+    $('oClients').textContent = (Math.round(hours * full / (mins / 60) * 10) / 10) ;
+    var now = parseFloat($('now').value);
+    if (isFinite(now) && now > 0) {
+      var earns = (now - prod) / (mins / 60);
+      var diff = now - min;
+      $('oNow').hidden = false;
+      $('oNow').className = 'cmp-out ' + (diff >= 0 ? 'ok' : 'low');
+      $('oNow').textContent = diff >= 0
+        ? 'At ' + whole(now, cur) + ' you earn ' + money(earns, cur) + ' per client hour — ' + money(diff, cur) + ' above your minimum.'
+        : 'At ' + whole(now, cur) + ' you earn ' + money(earns, cur) + ' per client hour — ' + money(-diff, cur) + ' below your minimum. Consider raising this price.';
+    } else { $('oNow').hidden = true; }
+  }
+  document.querySelectorAll('#pf input, #pf select, #now').forEach(function (e) { e.addEventListener('input', calc); });
+  calc();
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{% for item in site.data.price_faq %}
+    {"@type": "Question", "name": {{ item.q | jsonify }}, "acceptedAnswer": {"@type": "Answer", "text": {{ item.a | jsonify }}}}{% unless forloop.last %},{% endunless %}{% endfor %}
+  ]
+}
+</script>

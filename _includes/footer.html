@@ -9,11 +9,16 @@
         <h4>Product</h4>
         <a href="{{ '/#features' | relative_url }}">Features</a>
         {%- if site.app_store_id and site.app_store_id != "" %}
-        <a href="https://apps.apple.com/app/id{{ site.app_store_id }}">Download for iPhone</a>
+        {%- capture ctk %}{% include ct-key.html %}{% endcapture %}{% assign footer_ct = ctk | append: "-footer" %}
+        <a href="{% include app-store-url.html ct=footer_ct %}">Download for iPhone</a>
         {%- else %}
         <span class="footer-soon">iPhone app — coming soon</span>
         {%- endif %}
-        <a href="{{ '/blog/' | relative_url }}">Blog</a>
+        <a href="{{ '/guides/' | relative_url }}">Guides &amp; templates</a>
+        {%- assign all_free = site.data.tools | concat: site.data.templates %}
+        {%- for t in all_free %}
+        <a href="{{ t.url | relative_url }}">{{ t.short }}</a>
+        {%- endfor %}
       </div>
       <div>
         <h4>Help</h4>

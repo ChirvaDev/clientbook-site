@@ -1,0 +1,64 @@
+---
+layout: default
+title: "Free Tools, Templates & Guides for Beauty Pros"
+description: "Free price calculator, printable client record cards and practical guides for hairstylists, nail techs, lash artists and other solo service pros."
+permalink: /guides/
+search_title: "All tools, templates & guides"
+search_type: Page
+search_keywords: "guides articles blog tips tools templates free"
+---
+<main class="wrap guides-page">
+  <header class="section-head page-top">
+    <h1>Free tools, templates &amp; guides</h1>
+    <p class="lead">Calculators, printable forms and practical help for running your client book — free, no sign-up.</p>
+  </header>
+
+  <section class="g-section">
+    <h2 class="g-title">Free tools</h2>
+    <div class="tool-grid">
+      {%- for t in site.data.tools %}
+      <a class="tool" href="{{ t.url | relative_url }}">
+        <span class="tool-ic"><svg viewBox="0 0 24 24" aria-hidden="true">{{ t.icon }}</svg></span>
+        <h3>{{ t.title }}</h3>
+        <p>{{ t.desc }}</p>
+        <span class="tool-go">{{ t.go }} →</span>
+      </a>
+      {%- endfor %}
+    </div>
+  </section>
+
+  <section class="g-section">
+    <h2 class="g-title">Free templates</h2>
+    <div class="tool-grid">
+      {%- for t in site.data.templates %}
+      <a class="tool" href="{{ t.url | relative_url }}">
+        <span class="tool-ic"><svg viewBox="0 0 24 24" aria-hidden="true">{{ t.icon }}</svg></span>
+        <h3>{{ t.title }}</h3>
+        <p>{{ t.desc }}</p>
+        <span class="tool-go">{{ t.go }} →</span>
+      </a>
+      {%- endfor %}
+    </div>
+  </section>
+
+  <section class="g-section">
+    <h2 class="g-title">Guides</h2>
+    {% if site.posts.size > 0 %}
+    <div class="guide-grid">
+      {% for post in site.posts %}
+      {% assign words = post.content | strip_html | number_of_words %}
+      <a class="guide" href="{{ post.url | relative_url }}">
+        {% if post.cover %}<img src="{{ post.image | relative_url }}" alt="" width="1200" height="630" loading="lazy">{% endif %}
+        <div class="guide-body">
+          <h3>{{ post.title }}</h3>
+          {% if post.description %}<p>{{ post.description }}</p>{% endif %}
+          <span class="guide-meta">{{ words | divided_by: 220 | plus: 1 }} min read</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+      <div class="card"><p>Our first guides are on the way. In the meantime, grab a free template above.</p></div>
+    {% endif %}
+  </section>
+</main>

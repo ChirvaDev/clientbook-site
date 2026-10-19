@@ -3,12 +3,16 @@
     <a class="brand" href="{{ '/' | relative_url }}"><img src="{{ '/assets/icon.jpg' | relative_url }}" alt="Client Book logo" width="32" height="32">{{ site.title }}</a>
     <nav class="nav" aria-label="Main">
       <a href="{{ '/#features' | relative_url }}">Features</a>
-      <a href="{{ '/blog/' | relative_url }}"{% if page.url contains '/blog/' %} aria-current="page"{% endif %}>Blog</a>
+      <a href="{{ '/guides/' | relative_url }}"{% if page.url contains '/guides/' or page.ct_key contains 't-' %} aria-current="page"{% endif %}>Guides &amp; templates</a>
       <a href="{{ '/support.html' | relative_url }}"{% if page.url == '/support.html' %} aria-current="page"{% endif %}>Support</a>
     </nav>
     <div class="header-actions">
+      <button type="button" class="search-btn" id="searchOpen" aria-label="Search the site" title="Search (/)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
       {%- if site.app_store_id and site.app_store_id != "" %}
-      <a class="btn btn-sm" href="https://apps.apple.com/app/id{{ site.app_store_id }}">Download</a>
+      {%- capture ctk %}{% include ct-key.html %}{% endcapture %}{% assign header_ct = ctk | append: "-header" %}
+      <a class="btn btn-sm" href="{% include app-store-url.html ct=header_ct %}">Download</a>
       {%- else %}
       <span class="btn btn-sm btn-soon" aria-disabled="true">Coming soon</span>
       {%- endif %}
@@ -16,7 +20,7 @@
         <summary aria-label="Menu"><span></span><span></span></summary>
         <nav class="menu-panel" aria-label="Mobile">
           <a href="{{ '/#features' | relative_url }}">Features</a>
-          <a href="{{ '/blog/' | relative_url }}">Blog</a>
+          <a href="{{ '/guides/' | relative_url }}">Guides &amp; templates</a>
           <a href="{{ '/support.html' | relative_url }}">Support</a>
           <a href="{{ '/privacy.html' | relative_url }}">Privacy Policy</a>
           <a href="{{ '/terms.html' | relative_url }}">Terms of Use</a>
